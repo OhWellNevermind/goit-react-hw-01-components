@@ -1,8 +1,9 @@
 import { TransactionItem } from './TransactionItem';
+import { TransactionsTable } from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ transactions }) => {
   return (
-    <table className="transaction-history">
+    <TransactionsTable className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -20,6 +21,6 @@ export const TransactionHistory = ({ transactions }) => {
           );
         })}
       </tbody>
-    </table>
+    </TransactionsTable>
   );
 };

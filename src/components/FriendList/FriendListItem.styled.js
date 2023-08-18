@@ -1,8 +1,7 @@
 import { styled } from 'styled-components';
 
 const getOnlineStatusColor = props => {
-  console.log(props);
-  if (props.isOnline) {
+  if (props.is_online) {
     return 'green';
   } else {
     return 'red';
