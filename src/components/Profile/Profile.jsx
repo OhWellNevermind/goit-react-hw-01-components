@@ -1,29 +1,40 @@
+import {
+  ProfileWrapper,
+  DescriptionWrapper,
+  Avatar,
+  DescriptionUserName,
+  DescriptionAddInfo,
+  StatsList,
+  StatsListItem,
+  StatsItemText,
+} from './Profile.styled';
+
 export const Profile = ({
   userInfo: { username, tag, location, avatar, stats },
 }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileWrapper>
+      <DescriptionWrapper>
+        <Avatar src={avatar} alt="User avatar" />
+        <DescriptionUserName>{username}</DescriptionUserName>
+        <DescriptionAddInfo margin_bottom="10px">@{tag}</DescriptionAddInfo>
+        <DescriptionAddInfo>{location}</DescriptionAddInfo>
+      </DescriptionWrapper>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes} </span>
-        </li>
-      </ul>
-    </div>
+      <StatsList>
+        <StatsListItem>
+          <StatsItemText>Followers</StatsItemText>
+          <StatsItemText>{stats.followers}</StatsItemText>
+        </StatsListItem>
+        <StatsListItem>
+          <StatsItemText>Views</StatsItemText>
+          <StatsItemText>{stats.views}</StatsItemText>
+        </StatsListItem>
+        <StatsListItem>
+          <StatsItemText>Likes</StatsItemText>
+          <StatsItemText>{stats.likes} </StatsItemText>
+        </StatsListItem>
+      </StatsList>
+    </ProfileWrapper>
   );
 };

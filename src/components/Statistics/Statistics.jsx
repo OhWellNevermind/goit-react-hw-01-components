@@ -1,18 +1,24 @@
-import { StatisticItem } from './StatisticItem';
+import {
+  StatisticWrapper,
+  StatisticList,
+  StatisticListItem,
+  StatisticTitle,
+} from './Statistics.styled';
 
 export const Statistics = props => {
   return (
-    <section className="statistics">
-      {props.title && <h2 className="title">{props.title}</h2>}
-      <ul className="stat-list">
+    <StatisticWrapper>
+      {props.title && <StatisticTitle>{props.title}</StatisticTitle>}
+      <StatisticList>
         {props.stats.map(statisticData => {
           return (
-            <li key={statisticData.id} className="item">
-              <StatisticItem statistic={statisticData}></StatisticItem>
-            </li>
+            <StatisticListItem key={statisticData.id}>
+              <span className="label">{statisticData.label}</span>
+              <span className="percentage">{statisticData.percentage}%</span>
+            </StatisticListItem>
           );
         })}
-      </ul>
-    </section>
+      </StatisticList>
+    </StatisticWrapper>
   );
 };
