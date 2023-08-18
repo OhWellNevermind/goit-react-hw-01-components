@@ -5,6 +5,8 @@ import {
   StatisticTitle,
 } from './Statistics.styled';
 
+import propTypes from 'prop-types';
+
 export const Statistics = props => {
   return (
     <StatisticWrapper>
@@ -21,4 +23,15 @@ export const Statistics = props => {
       </StatisticList>
     </StatisticWrapper>
   );
+};
+
+Statistics.propTypes = {
+  title: propTypes.string,
+  stats: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.string,
+      label: propTypes.string,
+      percentage: propTypes.number,
+    })
+  ).isRequired,
 };

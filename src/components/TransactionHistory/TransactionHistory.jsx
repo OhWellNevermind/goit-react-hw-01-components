@@ -1,5 +1,6 @@
 import { TransactionItem } from './TransactionItem';
 import { TransactionsTable } from './TransactionHistory.styled';
+import propTypes from 'prop-types';
 
 export const TransactionHistory = ({ transactions }) => {
   return (
@@ -23,4 +24,15 @@ export const TransactionHistory = ({ transactions }) => {
       </tbody>
     </TransactionsTable>
   );
+};
+
+TransactionHistory.propTypes = {
+  transactions: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.string,
+      type: propTypes.string,
+      amount: propTypes.string,
+      currency: propTypes.string,
+    })
+  ),
 };
