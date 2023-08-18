@@ -5,6 +5,7 @@ export const StatisticWrapper = styled.section`
   flex-direction: column;
   width: 300px;
   background-color: #fff;
+  margin-bottom: 20px;
 `;
 
 export const StatisticTitle = styled.h2`
@@ -14,8 +15,6 @@ export const StatisticTitle = styled.h2`
 export const StatisticList = styled.ul`
   display: flex;
   width: 100%;
-  padding: 0;
-  margin: 0;
 `;
 
 export const StatisticListItem = styled.li`
